@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
+
         tailwind.config = {
             darkMode: 'class',
             theme: {
@@ -48,6 +49,72 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        .tiktok-border {
+  position: relative;
+  z-index: 0;
+}
+
+.tiktok-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px; /* قەبارەی لیدی */
+  border-radius: 9999px;
+  background: linear-gradient(
+    270deg,
+    #00f2ea,   /* شینی TikTok */
+    #1e90ff,   /* blue */
+    #00bfff,
+    #00f2ea,
+    #1e90ff
+  );
+  background-size: 300% 300%;
+  animation: blueBorder 3.5s linear infinite;
+  z-index: -1;
+}
+
+@keyframes blueBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+              .snap-border {
+  position: relative;
+  z-index: 0;
+}
+
+.snap-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px; /* قەبارەی لیدی */
+  border-radius: 9999px;
+  background: linear-gradient(
+    270deg,
+    #ff0000,
+    #ff9900,
+    #ffff00,
+    #00ff00,
+    #00ffff,
+    #0000ff,
+    #cc00ff,
+    #ff0000
+  );
+  background-size: 400% 400%;
+  animation: rainbowBorder 4s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rainbowBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 400% 50%;
+  }
+}
 
         body {
             font-family: 'Poppins', sans-serif;
@@ -123,6 +190,7 @@
             color: rgba(14, 165, 233, 0.1);
             font-family: serif;
             z-index: 0;
+
         }
     </style>
 </head>
@@ -1193,10 +1261,14 @@ HEALTH</span>
 
                       <div class="flex space-x-6 mt-10">
 
-                        <a href="https://github.com/kovanmuhmad"
-                            class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors">
-                            <i class="fab fa-github"></i>
-                        </a>
+                        <a href="https://www.snapchat.com/add/kovan.surche"
+                          class="snap-border w-10 h-10 rounded-full 
+                           flex items-center justify-center 
+                            bg-slate-200 dark:bg-slate-700"
+                           target="_blank">
+                        <i class="fab fa-snapchat-ghost text-xl text-black"></i>
+                          </a>
+
                       <a href="https://t.me/Kovan_muhammad"
                               class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center hover:bg-sky-500 hover:text-white transition-colors">
                              <i class="fab fa-telegram-plane"></i>
@@ -1206,10 +1278,14 @@ HEALTH</span>
                        
                         <i class="fab fa-facebook text-xl"></i>
                     <a href="https://www.tiktok.com/@kovan.m.surche"
-                       class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center hover:bg-black hover:text-white transition-colors"
-                        target="_blank">
-                       <i class="fab fa-tiktok text-xl"></i>
-                       </a>
+   class="tiktok-border w-10 h-10 rounded-full 
+          flex items-center justify-center
+          bg-slate-200 dark:bg-slate-700
+          hover:text-white"
+   target="_blank">
+    <i class="fab fa-tiktok text-xl"></i>
+</a>
+
 
                     </div>
                 </div>
